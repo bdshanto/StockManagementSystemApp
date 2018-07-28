@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.stockQuantityTextBox = new System.Windows.Forms.TextBox();
             this.SaveButton = new System.Windows.Forms.Button();
             this.msgLabel = new System.Windows.Forms.Label();
             this.companyComboBox = new System.Windows.Forms.ComboBox();
@@ -51,7 +51,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.stockQuantityTextBox);
             this.groupBox1.Controls.Add(this.SaveButton);
             this.groupBox1.Controls.Add(this.msgLabel);
             this.groupBox1.Controls.Add(this.companyComboBox);
@@ -70,12 +70,12 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Stock In";
             // 
-            // textBox1
+            // stockQuantityTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(193, 157);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(186, 20);
-            this.textBox1.TabIndex = 8;
+            this.stockQuantityTextBox.Location = new System.Drawing.Point(193, 157);
+            this.stockQuantityTextBox.Name = "stockQuantityTextBox";
+            this.stockQuantityTextBox.Size = new System.Drawing.Size(186, 20);
+            this.stockQuantityTextBox.TabIndex = 8;
             // 
             // SaveButton
             // 
@@ -85,6 +85,7 @@
             this.SaveButton.TabIndex = 7;
             this.SaveButton.Text = "Save";
             this.SaveButton.UseVisualStyleBackColor = true;
+            this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
             // msgLabel
             // 
@@ -220,7 +221,7 @@
         private System.Windows.Forms.Label availableQuantituLabel;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button SaveButton;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox stockQuantityTextBox;
         private System.Windows.Forms.Label label5;
     }
 }
