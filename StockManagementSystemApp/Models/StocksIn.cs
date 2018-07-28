@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace StockManagementSystemApp.Models
 {
-    class Stocks
+    class StocksIn
     {
         public long Id { get; set; }
         public long ItemId { get; set; }
