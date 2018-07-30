@@ -57,6 +57,12 @@
     <Compile Include="CompayUi.Designer.cs">
       <DependentUpon>CompayUi.cs</DependentUpon>
     </Compile>
+    <Compile Include="Index.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Index.Designer.cs">
+      <DependentUpon>Index.cs</DependentUpon>
+    </Compile>
     <Compile Include="ItemUi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,6 +94,9 @@
     <EmbeddedResource Include="CompayUi.resx">
       <DependentUpon>CompayUi.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Index.resx">
+      <DependentUpon>Index.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ItemUi.resx">
       <DependentUpon>ItemUi.cs</DependentUpon>
     </EmbeddedResource>
@@ -109,6 +118,7 @@
     <None Include="Properties\DataSources\StockManagementSystemApp.Models.Category.datasource" />
     <None Include="Properties\DataSources\StockManagementSystemApp.Models.Company.datasource" />
     <None Include="Properties\DataSources\StockManagementSystemApp.Models.Item.datasource" />
+    <None Include="Properties\DataSources\StockManagementSystemApp.Models.StockOut.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

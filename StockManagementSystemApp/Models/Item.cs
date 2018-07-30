@@ -13,5 +13,6 @@ namespace StockManagementSystemApp.Models
         public long CompanyId { get; set; }
         public string Name { get; set; }
         public long ReOrderLevel { get; set; }
+        public long Stock { get; set; }
     }
 }

@@ -21,6 +21,7 @@ namespace StockManagementSystemApp
         }
         string _conString = @"Server=.\SQLEXPRESS;Database=SMSDb;Integrated Security=True";
         StocksIn _stocks = new StocksIn();
+        StockOut _stockOut= new StockOut();
         private void LoadCompanyDropDown()
         {
             SqlConnection con = new SqlConnection(_conString);
@@ -33,19 +34,20 @@ namespace StockManagementSystemApp
             companyBindingSource.DataSource = dt;
             con.Close();
         }
+        DataTable dr= new DataTable();
         private void StockOut_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void itemComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            long id1 = Convert.ToInt64(itemComboBox.SelectedValue);
 
-            if (id1<=0)
+            long id1 = Convert.ToInt64(itemComboBox.SelectedValue);
+            if (id1 >= 0)
             {
                 SqlConnection con = new SqlConnection(_conString);
-               
+
 
                 string query = "select ReOrderLevel from Items where Id='" + id1 + "'";
                 SqlCommand com = new SqlCommand(query, con);
@@ -58,39 +60,41 @@ namespace StockManagementSystemApp
                     {
                         item.ReOrderLevel = Convert.ToInt32(dr["ReOrderLevel"].ToString());
                     }
+
                     reOrderLevelLabel.Text = item.ReOrderLevel.ToString();
                 }
+
                 con.Close();
             }
 
-            if (id1 > 0) return;
+            if (id1 >= 0)
             {
                 SqlConnection con = new SqlConnection(_conString);
-                string query = @"select AvailableQuantity from Stock where Id='"+id1+"'";
+                string query = @"select StockIn from Stocks  where Id=( select max (Id) from Stocks) and ItemId='"+id1+"'";
+                //  string query = @"select StockIn from Stocks where Id='10'";
                 SqlCommand com = new SqlCommand(query, con);
                 con.Open();
                 SqlDataReader dr = com.ExecuteReader();
                 if (dr.HasRows)
                 {
-                    Item item = new Item();
+                    StocksIn stocksIn = new StocksIn();
                     if (dr.Read())
                     {
-                        _stocks.StockIn = Convert.ToInt32(dr["AvailableQuantity"].ToString());
-                       
+                        stocksIn.StockIn = Convert.ToInt64(dr["StockIn"].ToString());
+
                     }
-                    stockQuantityTextBox.Text = item.ReOrderLevel.ToString();
+                    availableQuantituLabel.Text = stocksIn.StockIn.ToString();
                 }
                 con.Close();
+
             }
-
-
         }
 
         private void companyComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             long id = Convert.ToInt64(companyComboBox.SelectedValue);
             SqlConnection con = new SqlConnection(_conString);
-            string query = "select i.Id, i.Name from Items i join Companies c on i.CompanyId=c.Id where c.Id='" + id + "'";
+            string query = "select * from Items i join Companies c on i.CompanyId=c.Id where c.Id='" + id + "'";
             SqlCommand com = new SqlCommand(query, con);
             con.Open();
             DataTable dt = new DataTable();
@@ -99,7 +103,7 @@ namespace StockManagementSystemApp
             itemBindingSource.DataSource = dt;
             con.Close();
         }
-
+        List<StockOut> _stockOuts = new List<StockOut>();
         private void SaveButton_Click(object sender, EventArgs e)
         {
 
@@ -109,20 +113,36 @@ namespace StockManagementSystemApp
                 msgLabel.ForeColor = Color.Red;
                 return;
             }
-            _stocks.ItemId = Convert.ToInt64(itemComboBox.SelectedValue);
-            _stocks.StockIn = Convert.ToInt64(stockQuantityTextBox.Text);
 
-            /*bool isAdded = Add();
-            if (isAdded)
-            {
-                msgLabel.Text = $"Save stock Quantity: {stockQuantityTextBox.Text} successfully";
-            }*/
+            _stockOut.Item = Convert.ToInt64(itemComboBox.SelectedValue);
+            _stockOut.Company = Convert.ToInt64(companyComboBox.SelectedValue);
+            _stockOut.Quantity = Convert.ToInt64(stockQuantityTextBox.Text);
+
+dr.Rows.Add(_stockOut.Item,_stockOut.Company,_stockOut.Quantity);
+            stockOutBindingSource.DataSource = dr;
+
+            /*bool isAdded = AddedInList();
+              if (isAdded)
+              {
+                  msgLabel.Text = $"Save stock Quantity: {stockQuantityTextBox.Text} successfully";
+              }*/
 
         }
+
+        private void stockOutGridView_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+        {
+            stockOutGridView.Rows[e.RowIndex].Cells["id"].Value = e.RowIndex + 1;
+        }
+
+
         /*private bool Add()
         {
+            long stock = Convert.ToInt64(availableQuantituLabel.Text) - _stocks.StockIn;
             SqlConnection con = new SqlConnection(_conString);
-            string query = @"insert into Stock values('" + _stocks.ItemId + "','" + _stocks.StockIn + "')";
+            string query = @"insert into Stocks values('" + _stocks.ItemId + "','" + stock + "')";
+            // string query = "update stocks set StockIn='"+stock+ "'where ItemId='"+_stocks.ItemId+"'";
+            //string query = "update stocks set StockIn='"+stock+ "'where ItemId='"+_stocks.ItemId+"'";
+
             SqlCommand com = new SqlCommand(query, con);
             con.Open();
             bool rowAffect = com.ExecuteNonQuery() > 0;

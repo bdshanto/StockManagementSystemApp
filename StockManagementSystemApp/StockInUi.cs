@@ -38,7 +38,7 @@ namespace StockManagementSystemApp
         {
             long id = Convert.ToInt64(companyComboBox.SelectedValue);
             SqlConnection con = new SqlConnection(_conString);
-            string query = "select i.Id, i.Name from Items i join Companies c on i.CompanyId=c.Id where c.Id='" + id + "'";
+            string query = "select* from Items i join Companies c on i.CompanyId=c.Id where c.Id='" + id + "'";
             SqlCommand com = new SqlCommand(query, con);
             con.Open();
             DataTable dt = new DataTable();
@@ -46,17 +46,14 @@ namespace StockManagementSystemApp
             da.Fill(dt);
             itemBindingSource.DataSource = dt;
             con.Close();
-
-        }
+  }
 
         private void itemComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             long id1 = Convert.ToInt64(itemComboBox.SelectedValue);
-            if (id1 <= 0)
+            if (id1 >= 0)
             {
                 SqlConnection con = new SqlConnection(_conString);
-
-
                 string query = "select ReOrderLevel from Items where Id='" + id1 + "'";
                 SqlCommand com = new SqlCommand(query, con);
                 con.Open();
@@ -71,35 +68,30 @@ namespace StockManagementSystemApp
 
                     reOrderLevelLabel.Text = item.ReOrderLevel.ToString();
                 }
-
                 con.Close();
             }
 
-            /*if (id1 <= 0)
+            if (id1 >= 0)
             {
                 SqlConnection con = new SqlConnection(_conString);
-
-
-                string query = "select ReOrderLevel from Items where Id='" + id1 + "'";
+                string query = @"select StockIn from Stocks  where Id=( select max (Id) from Stocks) and ItemId='"+id1+"'";
+                //  string query = @"select StockIn from Stocks where Id='10'";
                 SqlCommand com = new SqlCommand(query, con);
                 con.Open();
                 SqlDataReader dr = com.ExecuteReader();
                 if (dr.HasRows)
                 {
-                    Item item = new Item();
+                    StocksIn stocksIn = new StocksIn();
                     if (dr.Read())
                     {
-                        item.ReOrderLevel = Convert.ToInt32(dr["ReOrderLevel"].ToString());
+                        stocksIn.StockIn = Convert.ToInt64(dr["StockIn"].ToString());
+
                     }
-
-                    reOrderLevelLabel.Text = item.ReOrderLevel.ToString();
+                    availableQuantituLabel.Text = stocksIn.StockIn.ToString();
                 }
-
                 con.Close();
-
-            }*/
+            }
         }
-
         private void SaveButton_Click(object sender, EventArgs e)
         {
 
@@ -109,7 +101,7 @@ namespace StockManagementSystemApp
                 msgLabel.ForeColor = Color.Red;
                 return;
             }
-            _stocks.ItemId =Convert.ToInt64(itemComboBox.SelectedValue);
+            _stocks.ItemId = Convert.ToInt64(itemComboBox.SelectedValue);
             _stocks.StockIn = Convert.ToInt64(stockQuantityTextBox.Text);
 
             bool isAdded = Add();
@@ -117,13 +109,15 @@ namespace StockManagementSystemApp
             {
                 msgLabel.Text = $"Save stock Quantity: {stockQuantityTextBox.Text} successfully";
             }
-
-
         }
         private bool Add()
         {
+            long stock = Convert.ToInt64(availableQuantituLabel.Text) + _stocks.StockIn;
             SqlConnection con = new SqlConnection(_conString);
-            string query = @"insert into Stock values('" + _stocks.ItemId + "','" + _stocks.StockIn + "')";
+            string query = @"insert into Stocks values('" + _stocks.ItemId + "','" + stock + "')";
+            // string query = "update stocks set StockIn='"+stock+ "'where ItemId='"+_stocks.ItemId+"'";
+            //string query = "update stocks set StockIn='"+stock+ "'where ItemId='"+_stocks.ItemId+"'";
+
             SqlCommand com = new SqlCommand(query, con);
             con.Open();
             bool rowAffect = com.ExecuteNonQuery() > 0;

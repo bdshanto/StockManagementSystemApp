@@ -72,14 +72,14 @@
             // 
             // stockQuantityTextBox
             // 
-            this.stockQuantityTextBox.Location = new System.Drawing.Point(193, 171);
+            this.stockQuantityTextBox.Location = new System.Drawing.Point(193, 190);
             this.stockQuantityTextBox.Name = "stockQuantityTextBox";
             this.stockQuantityTextBox.Size = new System.Drawing.Size(186, 20);
             this.stockQuantityTextBox.TabIndex = 8;
             // 
             // SaveButton
             // 
-            this.SaveButton.Location = new System.Drawing.Point(304, 215);
+            this.SaveButton.Location = new System.Drawing.Point(304, 234);
             this.SaveButton.Name = "SaveButton";
             this.SaveButton.Size = new System.Drawing.Size(75, 23);
             this.SaveButton.TabIndex = 7;
@@ -90,7 +90,7 @@
             // msgLabel
             // 
             this.msgLabel.AutoSize = true;
-            this.msgLabel.Location = new System.Drawing.Point(190, 48);
+            this.msgLabel.Location = new System.Drawing.Point(190, 29);
             this.msgLabel.Name = "msgLabel";
             this.msgLabel.Size = new System.Drawing.Size(0, 13);
             this.msgLabel.TabIndex = 6;
@@ -100,7 +100,7 @@
             this.companyComboBox.DataSource = this.companyBindingSource;
             this.companyComboBox.DisplayMember = "Name";
             this.companyComboBox.FormattingEnabled = true;
-            this.companyComboBox.Location = new System.Drawing.Point(193, 48);
+            this.companyComboBox.Location = new System.Drawing.Point(193, 67);
             this.companyComboBox.Name = "companyComboBox";
             this.companyComboBox.Size = new System.Drawing.Size(186, 21);
             this.companyComboBox.TabIndex = 4;
@@ -114,7 +114,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(94, 51);
+            this.label2.Location = new System.Drawing.Point(94, 70);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(51, 13);
             this.label2.TabIndex = 2;
@@ -125,7 +125,7 @@
             this.itemComboBox.DataSource = this.itemBindingSource;
             this.itemComboBox.DisplayMember = "Name";
             this.itemComboBox.FormattingEnabled = true;
-            this.itemComboBox.Location = new System.Drawing.Point(193, 87);
+            this.itemComboBox.Location = new System.Drawing.Point(193, 106);
             this.itemComboBox.Name = "itemComboBox";
             this.itemComboBox.Size = new System.Drawing.Size(186, 21);
             this.itemComboBox.TabIndex = 5;
@@ -139,7 +139,7 @@
             // availableQuantituLabel
             // 
             this.availableQuantituLabel.AutoSize = true;
-            this.availableQuantituLabel.Location = new System.Drawing.Point(190, 144);
+            this.availableQuantituLabel.Location = new System.Drawing.Point(190, 163);
             this.availableQuantituLabel.Name = "availableQuantituLabel";
             this.availableQuantituLabel.Size = new System.Drawing.Size(13, 13);
             this.availableQuantituLabel.TabIndex = 3;
@@ -148,7 +148,7 @@
             // reOrderLevelLabel
             // 
             this.reOrderLevelLabel.AutoSize = true;
-            this.reOrderLevelLabel.Location = new System.Drawing.Point(190, 122);
+            this.reOrderLevelLabel.Location = new System.Drawing.Point(190, 141);
             this.reOrderLevelLabel.Name = "reOrderLevelLabel";
             this.reOrderLevelLabel.Size = new System.Drawing.Size(13, 13);
             this.reOrderLevelLabel.TabIndex = 3;
@@ -157,7 +157,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(53, 179);
+            this.label5.Location = new System.Drawing.Point(53, 198);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(89, 13);
             this.label5.TabIndex = 3;
@@ -166,7 +166,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(53, 144);
+            this.label4.Location = new System.Drawing.Point(53, 163);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(92, 13);
             this.label4.TabIndex = 3;
@@ -175,7 +175,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(71, 122);
+            this.label3.Location = new System.Drawing.Point(71, 141);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(74, 13);
             this.label3.TabIndex = 3;
@@ -184,7 +184,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(118, 90);
+            this.label1.Location = new System.Drawing.Point(118, 109);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(27, 13);
             this.label1.TabIndex = 3;
