@@ -45,16 +45,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CategorySetupUi.cs">
+    <Compile Include="BLL\CategoryManager.cs" />
+    <Compile Include="BLL\CompanyManager.cs" />
+    <Compile Include="BLL\ItemManager.cs" />
+    <Compile Include="BLL\StockInManager.cs" />
+    <Compile Include="BLL\StockOutManager.cs" />
+    <Compile Include="DAL\CategorieGetway.cs" />
+    <Compile Include="DAL\CompanyGetway.cs" />
+    <Compile Include="DAL\StockInGetway.cs" />
+    <Compile Include="DAL\ItemGetway.cs" />
+    <Compile Include="UI\CategoryUi.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CategorySetupUi.Designer.cs">
-      <DependentUpon>CategorySetupUi.cs</DependentUpon>
+    <Compile Include="UI\CategoryUi.Designer.cs">
+      <DependentUpon>CategoryUi.cs</DependentUpon>
     </Compile>
-    <Compile Include="CompayUi.cs">
+    <Compile Include="UI\CompayUi.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CompayUi.Designer.cs">
+    <Compile Include="UI\CompayUi.Designer.cs">
       <DependentUpon>CompayUi.cs</DependentUpon>
     </Compile>
     <Compile Include="Index.cs">
@@ -63,10 +72,10 @@
     <Compile Include="Index.Designer.cs">
       <DependentUpon>Index.cs</DependentUpon>
     </Compile>
-    <Compile Include="ItemUi.cs">
+    <Compile Include="UI\ItemUi.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ItemUi.Designer.cs">
+    <Compile Include="UI\ItemUi.Designer.cs">
       <DependentUpon>ItemUi.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Category.cs" />
@@ -76,28 +85,28 @@
     <Compile Include="Models\StocksIn.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="StockInUi.cs">
+    <Compile Include="UI\StockInUi.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="StockInUi.Designer.cs">
+    <Compile Include="UI\StockInUi.Designer.cs">
       <DependentUpon>StockInUi.cs</DependentUpon>
     </Compile>
-    <Compile Include="StockOutUi.cs">
+    <Compile Include="UI\StockOutUi.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="StockOutUi.Designer.cs">
+    <Compile Include="UI\StockOutUi.Designer.cs">
       <DependentUpon>StockOutUi.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="CategorySetupUi.resx">
-      <DependentUpon>CategorySetupUi.cs</DependentUpon>
+    <EmbeddedResource Include="UI\CategoryUi.resx">
+      <DependentUpon>CategoryUi.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CompayUi.resx">
+    <EmbeddedResource Include="UI\CompayUi.resx">
       <DependentUpon>CompayUi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Index.resx">
       <DependentUpon>Index.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ItemUi.resx">
+    <EmbeddedResource Include="UI\ItemUi.resx">
       <DependentUpon>ItemUi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -109,10 +118,10 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="StockInUi.resx">
+    <EmbeddedResource Include="UI\StockInUi.resx">
       <DependentUpon>StockInUi.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="StockOutUi.resx">
+    <EmbeddedResource Include="UI\StockOutUi.resx">
       <DependentUpon>StockOutUi.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\DataSources\StockManagementSystemApp.Models.Category.datasource" />
@@ -132,7 +141,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="UI\Stock\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

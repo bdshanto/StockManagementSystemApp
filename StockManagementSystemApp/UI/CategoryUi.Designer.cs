@@ -1,6 +1,6 @@
-﻿namespace StockManagementSystemApp
+﻿namespace StockManagementSystemApp.UI
 {
-    partial class CategorySetupUi
+    partial class CategoryUi
     {
         /// <summary>
         /// Required designer variable.
@@ -29,17 +29,17 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CategorySetupUi));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CategoryUi));
             this.categoryGroupBox = new System.Windows.Forms.GroupBox();
             this.categoryGetDataGridView = new System.Windows.Forms.DataGridView();
             this.SL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Action = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.categoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.SaveButton = new System.Windows.Forms.Button();
             this.nameTextBox = new System.Windows.Forms.TextBox();
             this.nameLlabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.categoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.categoryGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.categoryGetDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoryBindingSource)).BeginInit();
@@ -114,6 +114,10 @@
             this.Action.Text = "Edit";
             this.Action.Width = 88;
             // 
+            // categoryBindingSource
+            // 
+            this.categoryBindingSource.DataSource = typeof(StockManagementSystemApp.Models.Category);
+            // 
             // SaveButton
             // 
             this.SaveButton.Location = new System.Drawing.Point(285, 109);
@@ -155,11 +159,7 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Name";
             // 
-            // categoryBindingSource
-            // 
-            this.categoryBindingSource.DataSource = typeof(StockManagementSystemApp.Models.Category);
-            // 
-            // CategorySetupUi
+            // CategoryUi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -170,7 +170,7 @@
             this.Controls.Add(this.categoryGroupBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.ImeMode = System.Windows.Forms.ImeMode.Katakana;
-            this.Name = "CategorySetupUi";
+            this.Name = "CategoryUi";
             this.Padding = new System.Windows.Forms.Padding(30);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Category Setup";

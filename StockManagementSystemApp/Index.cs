@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using StockManagementSystemApp.UI;
 
 namespace StockManagementSystemApp
 {
@@ -19,7 +20,7 @@ namespace StockManagementSystemApp
 
         private void button1_Click(object sender, EventArgs e)
         {
-            CategorySetupUi categorySetupUi = new CategorySetupUi();
+            CategoryUi categorySetupUi = new CategoryUi();
             categorySetupUi.Show();
         }
 

@@ -252,8 +252,7 @@
             this.Controls.Add(this.stockOutGridView);
             this.Controls.Add(this.groupBox1);
             this.Name = "StockOutUi";
-            this.Text = "StockOut";
-            this.Load += new System.EventHandler(this.StockOut_Load);
+            this.Text = "StockOut"; 
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.companyBindingSource)).EndInit();
