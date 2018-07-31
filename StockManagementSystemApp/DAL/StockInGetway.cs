@@ -96,5 +96,7 @@ namespace StockManagementSystemApp.DAL
             con.Close();
             return 0;
         }
+
+      
     }
 }

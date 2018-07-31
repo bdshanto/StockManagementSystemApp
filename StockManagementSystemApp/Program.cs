@@ -17,7 +17,7 @@ namespace StockManagementSystemApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ItemUi());
+            Application.Run(new StockOutUi());
         }
     }
 }

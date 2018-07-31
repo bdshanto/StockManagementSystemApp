@@ -18,14 +18,17 @@ namespace StockManagementSystemApp
         StockInManager _stockInManager = new StockInManager();
         StockOutManager _stockOutManager = new StockOutManager();
         StocksIn _stocksIn = new StocksIn();
-        StockOut _stockOut = new StockOut();
+        
+        List<StockOut> _stockOuts = new List<StockOut>();
         public StockOutUi()
         {
             InitializeComponent();
             LoadCompanyDropDown();
         }
-        string _conString = @"Server=.\SQLEXPRESS;Database=SMSDb;Integrated Security=True";
-
+        private void stockOutGridView_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+        {
+            stockOutGridView.Rows[e.RowIndex].Cells["id"].Value = e.RowIndex + 1;
+        }
 
         private void LoadCompanyDropDown()
         {
@@ -63,24 +66,28 @@ namespace StockManagementSystemApp
                 msgLabel.ForeColor = Color.Red;
                 return;
             }
+            StockOut stockOut = new StockOut();
 
-            _stockOut.Item = Convert.ToInt64(itemComboBox.SelectedValue);
-            _stockOut.Company = Convert.ToInt64(companyComboBox.SelectedValue);
-            _stockOut.Quantity = Convert.ToInt64(stockQuantityTextBox.Text);
+            stockOut.Item = Convert.ToInt64(itemComboBox.SelectedValue);
+            stockOut.Company = Convert.ToInt64(companyComboBox.SelectedValue);
+            stockOut.Quantity = Convert.ToInt64(stockQuantityTextBox.Text);
 
-          
+           
+            _stockOuts.Add(stockOut);
 
-            /*bool isAdded = AddedInList();
-              if (isAdded)
-              {
-                  msgLabel.Text = $"Save stock Quantity: {stockQuantityTextBox.Text} successfully";
-              }*/
 
+            
+           // DataTable dt = _stockInManager.GridUpdate();
+            stockOutGridView.DataSource = null;
+            stockOutGridView.DataSource = _stockOuts; 
         }
 
-        private void stockOutGridView_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+       
+
+        private void stockOutGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            stockOutGridView.Rows[e.RowIndex].Cells["id"].Value = e.RowIndex + 1;
+           
+
         }
 
 

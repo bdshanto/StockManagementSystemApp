@@ -200,6 +200,8 @@
             // 
             // stockOutGridView
             // 
+            this.stockOutGridView.AllowUserToAddRows = false;
+            this.stockOutGridView.AllowUserToDeleteRows = false;
             this.stockOutGridView.AutoGenerateColumns = false;
             this.stockOutGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.stockOutGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -210,8 +212,10 @@
             this.stockOutGridView.DataSource = this.stockOutBindingSource;
             this.stockOutGridView.Location = new System.Drawing.Point(12, 329);
             this.stockOutGridView.Name = "stockOutGridView";
+            this.stockOutGridView.ReadOnly = true;
             this.stockOutGridView.Size = new System.Drawing.Size(638, 314);
             this.stockOutGridView.TabIndex = 2;
+            this.stockOutGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.stockOutGridView_CellContentClick);
             this.stockOutGridView.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.stockOutGridView_RowPostPaint);
             // 
             // stockOutBindingSource
@@ -223,26 +227,28 @@
             this.id.DataPropertyName = "Id";
             this.id.HeaderText = "Id";
             this.id.Name = "id";
+            this.id.ReadOnly = true;
             // 
             // itemDataGridViewTextBoxColumn
             // 
-            this.itemDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.itemDataGridViewTextBoxColumn.DataPropertyName = "Item";
             this.itemDataGridViewTextBoxColumn.HeaderText = "Item";
             this.itemDataGridViewTextBoxColumn.Name = "itemDataGridViewTextBoxColumn";
+            this.itemDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // companyDataGridViewTextBoxColumn
             // 
-            this.companyDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.companyDataGridViewTextBoxColumn.DataPropertyName = "Company";
             this.companyDataGridViewTextBoxColumn.HeaderText = "Company";
             this.companyDataGridViewTextBoxColumn.Name = "companyDataGridViewTextBoxColumn";
+            this.companyDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // quantityDataGridViewTextBoxColumn
             // 
             this.quantityDataGridViewTextBoxColumn.DataPropertyName = "Quantity";
             this.quantityDataGridViewTextBoxColumn.HeaderText = "Quantity";
             this.quantityDataGridViewTextBoxColumn.Name = "quantityDataGridViewTextBoxColumn";
+            this.quantityDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // StockOutUi
             // 
@@ -252,7 +258,7 @@
             this.Controls.Add(this.stockOutGridView);
             this.Controls.Add(this.groupBox1);
             this.Name = "StockOutUi";
-            this.Text = "StockOut"; 
+            this.Text = "StockOut";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.companyBindingSource)).EndInit();
@@ -281,10 +287,10 @@
         private System.Windows.Forms.BindingSource companyBindingSource;
         private System.Windows.Forms.BindingSource itemBindingSource;
         private System.Windows.Forms.DataGridView stockOutGridView;
-        private System.Windows.Forms.BindingSource stockOutBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn itemDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn companyDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn quantityDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource stockOutBindingSource;
     }
 }
