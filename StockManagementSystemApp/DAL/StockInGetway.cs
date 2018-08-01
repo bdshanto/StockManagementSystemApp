@@ -79,7 +79,7 @@ namespace StockManagementSystemApp.DAL
         {
             SqlConnection con = new SqlConnection(_conString);
             // string query = @"select StockIn from Stocks  where Id=( select max (Id) from Stocks) and ItemId='" +id1+ "'";
-             string query = @"select StockIn from Stocks  where ItemId='"+id1+"' and Id=(select max (Id)from Stocks where ItemId='"+id1+"');";
+            string query = @"select StockIn from Stocks  where ItemId='"+id1+"' and Id=(select max (Id)from Stocks where ItemId='"+id1+"');";
             SqlCommand com = new SqlCommand(query, con);
             con.Open();
             SqlDataReader dr = com.ExecuteReader();
