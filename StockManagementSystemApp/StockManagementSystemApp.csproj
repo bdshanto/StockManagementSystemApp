@@ -54,6 +54,7 @@
     <Compile Include="DAL\CompanyGetway.cs" />
     <Compile Include="DAL\StockInGetway.cs" />
     <Compile Include="DAL\ItemGetway.cs" />
+    <Compile Include="DAL\StockOutGetway.cs" />
     <Compile Include="UI\CategoryUi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,6 +98,19 @@
     <Compile Include="UI\StockOutUi.Designer.cs">
       <DependentUpon>StockOutUi.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\SearchAndViewItemSummaryUi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\SearchAndViewItemSummaryUi.Designer.cs">
+      <DependentUpon>SearchAndViewItemSummaryUi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ViewSalesBetweenTwoDatesUi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ViewSalesBetweenTwoDatesUi.Designer.cs">
+      <DependentUpon>ViewSalesBetweenTwoDatesUi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VM\StockOutVM.cs" />
     <EmbeddedResource Include="UI\CategoryUi.resx">
       <DependentUpon>CategoryUi.cs</DependentUpon>
     </EmbeddedResource>
@@ -128,6 +142,7 @@
     <None Include="Properties\DataSources\StockManagementSystemApp.Models.Company.datasource" />
     <None Include="Properties\DataSources\StockManagementSystemApp.Models.Item.datasource" />
     <None Include="Properties\DataSources\StockManagementSystemApp.Models.StockOut.datasource" />
+    <None Include="Properties\DataSources\StockManagementSystemApp.VM.StockOutVM.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -141,9 +156,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="UI\Stock\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

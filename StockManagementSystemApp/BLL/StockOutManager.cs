@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,10 +11,9 @@ namespace StockManagementSystemApp.BLL
 {
     class StockOutManager
     {
-        StockInGetway _stockInGetway = new StockInGetway();
-/*        public List<StockOut> StockOutListInGrid()
-        {
-            return _stockInGetway.StockOutListInGrid();
-        }*/
+        StockOutGetway _stockOutGetway = new StockOutGetway();
+
+
+       
     }
 }

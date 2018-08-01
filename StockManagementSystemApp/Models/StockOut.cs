@@ -12,6 +12,7 @@ namespace StockManagementSystemApp.Models
         public long Item { get; set; }
         public long Company { get; set; }
         public long Quantity { get; set; }
-      
+        public long AvailableItems { get; set; }
+
     }
 }

@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StockManagementSystemApp.Models
+namespace StockManagementSystemApp.VM
 {
-    class StocksIn
+    class StockOutVM
     {
         public long Id { get; set; }
-        public long ItemId { get; set; }
+        public string  Item { get; set; }
+        public string Company { get; set; }
         public long StockIn { get; set; }
-        
     }
 }

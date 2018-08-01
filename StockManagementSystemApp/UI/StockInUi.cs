@@ -13,7 +13,7 @@ namespace StockManagementSystemApp
     public partial class StockInUi : Form
     {
         
-        StocksIn _stockIn = new StocksIn();
+        StocksIn _stocksIn = new StocksIn();
         StockInManager _stockInManager = new StockInManager();
         public StockInUi()
         {
@@ -22,7 +22,7 @@ namespace StockManagementSystemApp
         }
         private void LoadCompanyDropDown()
         {
-            DataTable dt = _stockInManager.LoadCompanyDropDown(_stockIn);
+            DataTable dt = _stockInManager.LoadCompanyDropDown(_stocksIn);
             companyBindingSource.DataSource = dt;
         }
         private void companyComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -44,8 +44,8 @@ namespace StockManagementSystemApp
             if (id1 >= 0)
             {
 
-                long ReorderLevl = _stockInManager.availableQuantituLabel(id1);
-                reOrderLevelLabel.Text = ReorderLevl.ToString();
+                long availableQuantity = _stockInManager.availableQuantituLabel(id1);
+                availableQuantituLabel.Text = availableQuantity.ToString();
             }
         }
         private void SaveButton_Click(object sender, EventArgs e)
@@ -57,11 +57,11 @@ namespace StockManagementSystemApp
                 msgLabel.ForeColor = Color.Red;
                 return;
             }
-            _stockIn.ItemId = Convert.ToInt64(itemComboBox.SelectedValue);
-            _stockIn.StockIn = Convert.ToInt64(stockQuantityTextBox.Text);
+            _stocksIn.ItemId = Convert.ToInt64(itemComboBox.SelectedValue);
+            _stocksIn.StockIn = Convert.ToInt64(stockQuantityTextBox.Text);
 
-            long availableQuantity = Convert.ToInt64(availableQuantituLabel.Text) + _stockIn.StockIn;
-            bool isAdded = _stockInManager.Add(_stockIn, availableQuantity);
+            long availableQuantity = Convert.ToInt64(availableQuantituLabel.Text) + _stocksIn.StockIn;
+            bool isAdded = _stockInManager.Add(_stocksIn, availableQuantity);
             if (isAdded)
             {
                 msgLabel.Text = $"Save stock Quantity: {stockQuantityTextBox.Text} successfully";

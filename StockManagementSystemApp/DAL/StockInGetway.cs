@@ -64,7 +64,7 @@ namespace StockManagementSystemApp.DAL
         }
         public bool Add(StocksIn stockIn, long availableQuantity)
         {
-
+          
             SqlConnection con = new SqlConnection(_conString);
             string query = @"insert into Stocks values('" + stockIn.ItemId + "','" + availableQuantity + "')";
             SqlCommand com = new SqlCommand(query, con);
@@ -78,8 +78,8 @@ namespace StockManagementSystemApp.DAL
         public long availableQuantituLabel(long id1)
         {
             SqlConnection con = new SqlConnection(_conString);
-            string query = @"select StockIn from Stocks  where Id=( select max (Id) from Stocks) and ItemId='" + id1 + "'";
-            //  string query = @"select StockIn from Stocks where Id='10'";
+            // string query = @"select StockIn from Stocks  where Id=( select max (Id) from Stocks) and ItemId='" +id1+ "'";
+             string query = @"select StockIn from Stocks  where ItemId='"+id1+"' and Id=(select max (Id)from Stocks where ItemId='"+id1+"');";
             SqlCommand com = new SqlCommand(query, con);
             con.Open();
             SqlDataReader dr = com.ExecuteReader();
