@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CompayUi));
             this.catagoryGroupBox = new System.Windows.Forms.GroupBox();
             this.companyGetDataGridView = new System.Windows.Forms.DataGridView();
             this.SL = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,7 +48,7 @@
             // catagoryGroupBox
             // 
             this.catagoryGroupBox.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuBar;
-            this.catagoryGroupBox.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.catagoryGroupBox.BackColor = System.Drawing.Color.Transparent;
             this.catagoryGroupBox.Controls.Add(this.companyGetDataGridView);
             this.catagoryGroupBox.Controls.Add(this.SaveButton);
             this.catagoryGroupBox.Controls.Add(this.nameTextBox);
@@ -160,9 +161,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(776, 552);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.ClientSize = new System.Drawing.Size(799, 506);
             this.Controls.Add(this.catagoryGroupBox);
             this.Name = "CompayUi";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CompayUi";
             this.catagoryGroupBox.ResumeLayout(false);
             this.catagoryGroupBox.PerformLayout();

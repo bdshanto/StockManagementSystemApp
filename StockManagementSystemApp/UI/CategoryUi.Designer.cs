@@ -48,7 +48,7 @@
             // categoryGroupBox
             // 
             this.categoryGroupBox.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuBar;
-            this.categoryGroupBox.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.categoryGroupBox.BackColor = System.Drawing.Color.Transparent;
             this.categoryGroupBox.Controls.Add(this.categoryGetDataGridView);
             this.categoryGroupBox.Controls.Add(this.SaveButton);
             this.categoryGroupBox.Controls.Add(this.nameTextBox);
@@ -56,10 +56,10 @@
             this.categoryGroupBox.Controls.Add(this.label1);
             this.categoryGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.categoryGroupBox.ForeColor = System.Drawing.Color.DarkRed;
-            this.categoryGroupBox.Location = new System.Drawing.Point(164, 47);
+            this.categoryGroupBox.Location = new System.Drawing.Point(55, 41);
             this.categoryGroupBox.Margin = new System.Windows.Forms.Padding(3, 9, 3, 3);
             this.categoryGroupBox.Name = "categoryGroupBox";
-            this.categoryGroupBox.Size = new System.Drawing.Size(631, 432);
+            this.categoryGroupBox.Size = new System.Drawing.Size(638, 463);
             this.categoryGroupBox.TabIndex = 0;
             this.categoryGroupBox.TabStop = false;
             this.categoryGroupBox.Text = "Category";
@@ -70,6 +70,7 @@
             this.categoryGetDataGridView.AllowUserToAddRows = false;
             this.categoryGetDataGridView.AllowUserToDeleteRows = false;
             this.categoryGetDataGridView.AutoGenerateColumns = false;
+            this.categoryGetDataGridView.BackgroundColor = System.Drawing.Color.LightGray;
             this.categoryGetDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.categoryGetDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.SL,
@@ -141,6 +142,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.LightGray;
             this.label1.Location = new System.Drawing.Point(139, 60);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(51, 20);
@@ -167,7 +169,7 @@
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(854, 513);
+            this.ClientSize = new System.Drawing.Size(799, 506);
             this.Controls.Add(this.categoryGroupBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.ImeMode = System.Windows.Forms.ImeMode.Katakana;
