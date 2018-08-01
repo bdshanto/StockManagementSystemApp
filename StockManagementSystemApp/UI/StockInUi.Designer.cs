@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StockInUi));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.stockQuantityTextBox = new System.Windows.Forms.TextBox();
+            this.SaveButton = new System.Windows.Forms.Button();
             this.msgLabel = new System.Windows.Forms.Label();
             this.companyComboBox = new System.Windows.Forms.ComboBox();
             this.companyBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -39,7 +40,6 @@
             this.itemBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.availableQuantituLabel = new System.Windows.Forms.Label();
             this.reOrderLevelLabel = new System.Windows.Forms.Label();
-            this.SaveButton = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -56,10 +56,15 @@
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.Controls.Add(this.stockQuantityTextBox);
             this.groupBox1.Controls.Add(this.SaveButton);
+            this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.msgLabel);
+            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.companyComboBox);
+            this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.itemComboBox);
+            this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.availableQuantituLabel);
+            this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.reOrderLevelLabel);
             this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.DeepSkyBlue;
@@ -76,6 +81,16 @@
             this.stockQuantityTextBox.Name = "stockQuantityTextBox";
             this.stockQuantityTextBox.Size = new System.Drawing.Size(186, 26);
             this.stockQuantityTextBox.TabIndex = 8;
+            // 
+            // SaveButton
+            // 
+            this.SaveButton.Location = new System.Drawing.Point(249, 233);
+            this.SaveButton.Name = "SaveButton";
+            this.SaveButton.Size = new System.Drawing.Size(75, 23);
+            this.SaveButton.TabIndex = 7;
+            this.SaveButton.Text = "Save";
+            this.SaveButton.UseVisualStyleBackColor = true;
+            this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
             // msgLabel
             // 
@@ -135,25 +150,15 @@
             this.reOrderLevelLabel.TabIndex = 3;
             this.reOrderLevelLabel.Text = "0";
             // 
-            // SaveButton
-            // 
-            this.SaveButton.Location = new System.Drawing.Point(249, 233);
-            this.SaveButton.Name = "SaveButton";
-            this.SaveButton.Size = new System.Drawing.Size(75, 23);
-            this.SaveButton.TabIndex = 7;
-            this.SaveButton.Text = "Save";
-            this.SaveButton.UseVisualStyleBackColor = true;
-            this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Image = ((System.Drawing.Image)(resources.GetObject("label2.Image")));
             this.label2.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.label2.Location = new System.Drawing.Point(432, -93);
+            this.label2.Location = new System.Drawing.Point(101, 69);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 13);
+            this.label2.Size = new System.Drawing.Size(68, 19);
             this.label2.TabIndex = 2;
             this.label2.Text = "Company";
             // 
@@ -163,9 +168,9 @@
             this.label5.ForeColor = System.Drawing.Color.Black;
             this.label5.Image = ((System.Drawing.Image)(resources.GetObject("label5.Image")));
             this.label5.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.label5.Location = new System.Drawing.Point(391, 35);
+            this.label5.Location = new System.Drawing.Point(60, 197);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(89, 13);
+            this.label5.Size = new System.Drawing.Size(116, 19);
             this.label5.TabIndex = 3;
             this.label5.Text = "Stock In Quantity";
             // 
@@ -175,9 +180,9 @@
             this.label4.ForeColor = System.Drawing.Color.Black;
             this.label4.Image = ((System.Drawing.Image)(resources.GetObject("label4.Image")));
             this.label4.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.label4.Location = new System.Drawing.Point(391, 0);
+            this.label4.Location = new System.Drawing.Point(60, 162);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(92, 13);
+            this.label4.Size = new System.Drawing.Size(119, 19);
             this.label4.TabIndex = 3;
             this.label4.Text = "Available Quantity";
             // 
@@ -187,9 +192,9 @@
             this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.Image = ((System.Drawing.Image)(resources.GetObject("label3.Image")));
             this.label3.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.label3.Location = new System.Drawing.Point(409, -22);
+            this.label3.Location = new System.Drawing.Point(78, 140);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(74, 13);
+            this.label3.Size = new System.Drawing.Size(96, 19);
             this.label3.TabIndex = 3;
             this.label3.Text = "Reorder Level";
             // 
@@ -199,9 +204,9 @@
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Image = ((System.Drawing.Image)(resources.GetObject("label1.Image")));
             this.label1.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.label1.Location = new System.Drawing.Point(456, -54);
+            this.label1.Location = new System.Drawing.Point(125, 108);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(27, 13);
+            this.label1.Size = new System.Drawing.Size(36, 19);
             this.label1.TabIndex = 3;
             this.label1.Text = "Item";
             // 
@@ -223,11 +228,6 @@
             this.ClientSize = new System.Drawing.Size(799, 506);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label5);
             this.Name = "StockInUi";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "StockInUi";
@@ -236,7 +236,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.companyBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemBindingSource)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
