@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.companyComboBox = new System.Windows.Forms.ComboBox();
-            this.categoryComboBox = new System.Windows.Forms.ComboBox();
-            this.searchButton = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.searchButton = new System.Windows.Forms.Button();
+            this.categoryComboBox = new System.Windows.Forms.ComboBox();
+            this.companyComboBox = new System.Windows.Forms.ComboBox();
             this.SearchAndViewDataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SearchAndViewDataGridView1)).BeginInit();
@@ -56,32 +56,14 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Search and View Item\'s Summary";
             // 
-            // companyComboBox
+            // label2
             // 
-            this.companyComboBox.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.companyComboBox.FormattingEnabled = true;
-            this.companyComboBox.Location = new System.Drawing.Point(230, 60);
-            this.companyComboBox.Name = "companyComboBox";
-            this.companyComboBox.Size = new System.Drawing.Size(134, 27);
-            this.companyComboBox.TabIndex = 0;
-            // 
-            // categoryComboBox
-            // 
-            this.categoryComboBox.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.categoryComboBox.FormattingEnabled = true;
-            this.categoryComboBox.Location = new System.Drawing.Point(230, 119);
-            this.categoryComboBox.Name = "categoryComboBox";
-            this.categoryComboBox.Size = new System.Drawing.Size(134, 27);
-            this.categoryComboBox.TabIndex = 1;
-            // 
-            // searchButton
-            // 
-            this.searchButton.Location = new System.Drawing.Point(289, 174);
-            this.searchButton.Name = "searchButton";
-            this.searchButton.Size = new System.Drawing.Size(75, 23);
-            this.searchButton.TabIndex = 2;
-            this.searchButton.Text = "Search";
-            this.searchButton.UseVisualStyleBackColor = true;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(143, 127);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(65, 19);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Category";
             // 
             // label1
             // 
@@ -92,14 +74,32 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Company";
             // 
-            // label2
+            // searchButton
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(143, 127);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(65, 19);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Category";
+            this.searchButton.Location = new System.Drawing.Point(289, 174);
+            this.searchButton.Name = "searchButton";
+            this.searchButton.Size = new System.Drawing.Size(75, 23);
+            this.searchButton.TabIndex = 2;
+            this.searchButton.Text = "Search";
+            this.searchButton.UseVisualStyleBackColor = true;
+            // 
+            // categoryComboBox
+            // 
+            this.categoryComboBox.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.categoryComboBox.FormattingEnabled = true;
+            this.categoryComboBox.Location = new System.Drawing.Point(230, 119);
+            this.categoryComboBox.Name = "categoryComboBox";
+            this.categoryComboBox.Size = new System.Drawing.Size(134, 27);
+            this.categoryComboBox.TabIndex = 1;
+            // 
+            // companyComboBox
+            // 
+            this.companyComboBox.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.companyComboBox.FormattingEnabled = true;
+            this.companyComboBox.Location = new System.Drawing.Point(230, 60);
+            this.companyComboBox.Name = "companyComboBox";
+            this.companyComboBox.Size = new System.Drawing.Size(134, 27);
+            this.companyComboBox.TabIndex = 0;
             // 
             // SearchAndViewDataGridView1
             // 
@@ -117,10 +117,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(590, 484);
+            this.ClientSize = new System.Drawing.Size(799, 506);
             this.Controls.Add(this.SearchAndViewDataGridView1);
             this.Controls.Add(this.groupBox1);
             this.Name = "SearchAndViewItemSummaryUi";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SearchAndViewItemSummaryUi";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

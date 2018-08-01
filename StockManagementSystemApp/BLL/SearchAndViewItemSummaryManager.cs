@@ -12,6 +12,7 @@ namespace StockManagementSystemApp.BLL
     class SearchAndViewItemSummaryManager
     {
         SearchAndViewItemSummaryGetway _andViewItemSummaryGetway = new SearchAndViewItemSummaryGetway();
+
         public DataTable SearchViewInGrid(SearchAndViewItemSummary searchAndViewItemSummary)
         {
             return _andViewItemSummaryGetway.SearchViewInGrid(searchAndViewItemSummary);

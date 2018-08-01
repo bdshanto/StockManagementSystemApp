@@ -7,6 +7,7 @@ using System.Net.NetworkInformation;
 using System.Windows.Forms;
 using StockManagementSystemApp.Models;
 using StockManagementSystemApp.BLL;
+using StockManagementSystemApp.VM;
 
 namespace StockManagementSystemApp
 {
@@ -66,6 +67,13 @@ namespace StockManagementSystemApp
             {
                 msgLabel.Text = $"Save stock Quantity: {stockQuantityTextBox.Text} successfully";
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Homepage homepage = new Homepage();
+            homepage.Show();
+            homepage.Hide();
         }
     }
 }
