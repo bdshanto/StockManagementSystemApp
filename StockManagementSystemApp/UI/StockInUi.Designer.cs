@@ -51,6 +51,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.SystemColors.Info;
             this.groupBox1.Controls.Add(this.stockQuantityTextBox);
             this.groupBox1.Controls.Add(this.SaveButton);
             this.groupBox1.Controls.Add(this.msgLabel);
@@ -63,6 +64,8 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.ForeColor = System.Drawing.Color.DeepSkyBlue;
             this.groupBox1.Location = new System.Drawing.Point(52, 52);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(524, 292);
@@ -74,7 +77,7 @@
             // 
             this.stockQuantityTextBox.Location = new System.Drawing.Point(193, 190);
             this.stockQuantityTextBox.Name = "stockQuantityTextBox";
-            this.stockQuantityTextBox.Size = new System.Drawing.Size(186, 20);
+            this.stockQuantityTextBox.Size = new System.Drawing.Size(186, 26);
             this.stockQuantityTextBox.TabIndex = 8;
             // 
             // SaveButton
@@ -92,7 +95,7 @@
             this.msgLabel.AutoSize = true;
             this.msgLabel.Location = new System.Drawing.Point(190, 29);
             this.msgLabel.Name = "msgLabel";
-            this.msgLabel.Size = new System.Drawing.Size(0, 13);
+            this.msgLabel.Size = new System.Drawing.Size(0, 19);
             this.msgLabel.TabIndex = 6;
             // 
             // companyComboBox
@@ -102,7 +105,7 @@
             this.companyComboBox.FormattingEnabled = true;
             this.companyComboBox.Location = new System.Drawing.Point(193, 67);
             this.companyComboBox.Name = "companyComboBox";
-            this.companyComboBox.Size = new System.Drawing.Size(186, 21);
+            this.companyComboBox.Size = new System.Drawing.Size(186, 27);
             this.companyComboBox.TabIndex = 4;
             this.companyComboBox.ValueMember = "Id";
             this.companyComboBox.SelectedIndexChanged += new System.EventHandler(this.companyComboBox_SelectedIndexChanged);
@@ -116,7 +119,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(94, 70);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 13);
+            this.label2.Size = new System.Drawing.Size(68, 19);
             this.label2.TabIndex = 2;
             this.label2.Text = "Company";
             // 
@@ -127,7 +130,7 @@
             this.itemComboBox.FormattingEnabled = true;
             this.itemComboBox.Location = new System.Drawing.Point(193, 106);
             this.itemComboBox.Name = "itemComboBox";
-            this.itemComboBox.Size = new System.Drawing.Size(186, 21);
+            this.itemComboBox.Size = new System.Drawing.Size(186, 27);
             this.itemComboBox.TabIndex = 5;
             this.itemComboBox.ValueMember = "Id";
             this.itemComboBox.SelectedIndexChanged += new System.EventHandler(this.itemComboBox_SelectedIndexChanged);
@@ -141,7 +144,7 @@
             this.availableQuantituLabel.AutoSize = true;
             this.availableQuantituLabel.Location = new System.Drawing.Point(190, 163);
             this.availableQuantituLabel.Name = "availableQuantituLabel";
-            this.availableQuantituLabel.Size = new System.Drawing.Size(13, 13);
+            this.availableQuantituLabel.Size = new System.Drawing.Size(17, 19);
             this.availableQuantituLabel.TabIndex = 3;
             this.availableQuantituLabel.Text = "0";
             // 
@@ -150,7 +153,7 @@
             this.reOrderLevelLabel.AutoSize = true;
             this.reOrderLevelLabel.Location = new System.Drawing.Point(190, 141);
             this.reOrderLevelLabel.Name = "reOrderLevelLabel";
-            this.reOrderLevelLabel.Size = new System.Drawing.Size(13, 13);
+            this.reOrderLevelLabel.Size = new System.Drawing.Size(17, 19);
             this.reOrderLevelLabel.TabIndex = 3;
             this.reOrderLevelLabel.Text = "0";
             // 
@@ -159,7 +162,7 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(53, 198);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(89, 13);
+            this.label5.Size = new System.Drawing.Size(116, 19);
             this.label5.TabIndex = 3;
             this.label5.Text = "Stock In Quantity";
             // 
@@ -168,7 +171,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(53, 163);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(92, 13);
+            this.label4.Size = new System.Drawing.Size(119, 19);
             this.label4.TabIndex = 3;
             this.label4.Text = "Available Quantity";
             // 
@@ -177,7 +180,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(71, 141);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(74, 13);
+            this.label3.Size = new System.Drawing.Size(96, 19);
             this.label3.TabIndex = 3;
             this.label3.Text = "Reorder Level";
             // 
@@ -186,7 +189,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(118, 109);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(27, 13);
+            this.label1.Size = new System.Drawing.Size(36, 19);
             this.label1.TabIndex = 3;
             this.label1.Text = "Item";
             // 

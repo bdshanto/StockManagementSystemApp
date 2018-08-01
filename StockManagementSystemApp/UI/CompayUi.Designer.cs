@@ -29,40 +29,40 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.categoryGroupBox = new System.Windows.Forms.GroupBox();
+            this.catagoryGroupBox = new System.Windows.Forms.GroupBox();
             this.companyGetDataGridView = new System.Windows.Forms.DataGridView();
+            this.SL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Action = new System.Windows.Forms.DataGridViewButtonColumn();
             this.SaveButton = new System.Windows.Forms.Button();
             this.nameTextBox = new System.Windows.Forms.TextBox();
             this.nameLlabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.SL = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Action = new System.Windows.Forms.DataGridViewButtonColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.companyBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.categoryGroupBox.SuspendLayout();
+            this.catagoryGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.companyGetDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.companyBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // categoryGroupBox
+            // catagoryGroupBox
             // 
-            this.categoryGroupBox.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuBar;
-            this.categoryGroupBox.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.categoryGroupBox.Controls.Add(this.companyGetDataGridView);
-            this.categoryGroupBox.Controls.Add(this.SaveButton);
-            this.categoryGroupBox.Controls.Add(this.nameTextBox);
-            this.categoryGroupBox.Controls.Add(this.nameLlabel);
-            this.categoryGroupBox.Controls.Add(this.label1);
-            this.categoryGroupBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.categoryGroupBox.ForeColor = System.Drawing.Color.DarkRed;
-            this.categoryGroupBox.Location = new System.Drawing.Point(48, 18);
-            this.categoryGroupBox.Margin = new System.Windows.Forms.Padding(3, 9, 3, 3);
-            this.categoryGroupBox.Name = "categoryGroupBox";
-            this.categoryGroupBox.Size = new System.Drawing.Size(642, 479);
-            this.categoryGroupBox.TabIndex = 1;
-            this.categoryGroupBox.TabStop = false;
-            this.categoryGroupBox.Text = "Category";
-            this.categoryGroupBox.UseCompatibleTextRendering = true;
+            this.catagoryGroupBox.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuBar;
+            this.catagoryGroupBox.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.catagoryGroupBox.Controls.Add(this.companyGetDataGridView);
+            this.catagoryGroupBox.Controls.Add(this.SaveButton);
+            this.catagoryGroupBox.Controls.Add(this.nameTextBox);
+            this.catagoryGroupBox.Controls.Add(this.nameLlabel);
+            this.catagoryGroupBox.Controls.Add(this.label1);
+            this.catagoryGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.catagoryGroupBox.ForeColor = System.Drawing.Color.DarkRed;
+            this.catagoryGroupBox.Location = new System.Drawing.Point(48, 18);
+            this.catagoryGroupBox.Margin = new System.Windows.Forms.Padding(3, 9, 3, 3);
+            this.catagoryGroupBox.Name = "catagoryGroupBox";
+            this.catagoryGroupBox.Size = new System.Drawing.Size(642, 479);
+            this.catagoryGroupBox.TabIndex = 1;
+            this.catagoryGroupBox.TabStop = false;
+            this.catagoryGroupBox.Text = "Company";
+            this.catagoryGroupBox.UseCompatibleTextRendering = true;
             // 
             // companyGetDataGridView
             // 
@@ -82,6 +82,27 @@
             this.companyGetDataGridView.Size = new System.Drawing.Size(547, 232);
             this.companyGetDataGridView.TabIndex = 3;
             // 
+            // SL
+            // 
+            this.SL.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.SL.Frozen = true;
+            this.SL.HeaderText = "SL";
+            this.SL.Name = "SL";
+            this.SL.ReadOnly = true;
+            this.SL.ToolTipText = "Serial";
+            this.SL.Width = 54;
+            // 
+            // Action
+            // 
+            this.Action.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Action.HeaderText = "Action";
+            this.Action.Name = "Action";
+            this.Action.ReadOnly = true;
+            this.Action.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Action.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Action.Text = "Edit";
+            this.Action.Width = 79;
+            // 
             // SaveButton
             // 
             this.SaveButton.Location = new System.Drawing.Point(285, 109);
@@ -99,7 +120,7 @@
             this.nameTextBox.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.nameTextBox.Location = new System.Drawing.Point(205, 57);
             this.nameTextBox.Name = "nameTextBox";
-            this.nameTextBox.Size = new System.Drawing.Size(230, 27);
+            this.nameTextBox.Size = new System.Drawing.Size(230, 26);
             this.nameTextBox.TabIndex = 1;
             // 
             // nameLlabel
@@ -119,30 +140,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(139, 60);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 21);
+            this.label1.Size = new System.Drawing.Size(51, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Name";
-            // 
-            // SL
-            // 
-            this.SL.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.SL.Frozen = true;
-            this.SL.HeaderText = "SL";
-            this.SL.Name = "SL";
-            this.SL.ReadOnly = true;
-            this.SL.ToolTipText = "Serial";
-            this.SL.Width = 50;
-            // 
-            // Action
-            // 
-            this.Action.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.Action.HeaderText = "Action";
-            this.Action.Name = "Action";
-            this.Action.ReadOnly = true;
-            this.Action.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Action.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Action.Text = "Edit";
-            this.Action.Width = 88;
             // 
             // nameDataGridViewTextBoxColumn
             // 
@@ -161,11 +161,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(776, 552);
-            this.Controls.Add(this.categoryGroupBox);
+            this.Controls.Add(this.catagoryGroupBox);
             this.Name = "CompayUi";
             this.Text = "CompayUi";
-            this.categoryGroupBox.ResumeLayout(false);
-            this.categoryGroupBox.PerformLayout();
+            this.catagoryGroupBox.ResumeLayout(false);
+            this.catagoryGroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.companyGetDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.companyBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -174,7 +174,7 @@
 
         #endregion
 
-        private System.Windows.Forms.GroupBox categoryGroupBox;
+        private System.Windows.Forms.GroupBox catagoryGroupBox;
         private System.Windows.Forms.DataGridView companyGetDataGridView;
         private System.Windows.Forms.Button SaveButton;
         private System.Windows.Forms.TextBox nameTextBox;

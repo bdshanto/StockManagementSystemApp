@@ -28,8 +28,8 @@ namespace StockManagementSystemApp.UI
         private void GetData()
         {
             DataTable geTable = _categoryManager.GetData(_category);
-            categoryBindingSource.DataSource = geTable;
-            categoryGetDataGridView.DataSource = categoryBindingSource;
+           // categoryBindingSource.DataSource = geTable;
+            categoryGetDataGridView.DataSource = geTable;
         }
      
         private void SaveButton_Click(object sender, EventArgs e)
@@ -66,8 +66,10 @@ namespace StockManagementSystemApp.UI
                 MessageBox.Show(exception.Message); 
             } 
         }
- 
-       
 
+        private void categoryGetDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

@@ -110,6 +110,7 @@
     <Compile Include="UI\ViewSalesBetweenTwoDatesUi.Designer.cs">
       <DependentUpon>ViewSalesBetweenTwoDatesUi.cs</DependentUpon>
     </Compile>
+    <Compile Include="VM\SearchAndView.cs" />
     <Compile Include="VM\StockOutVM.cs" />
     <EmbeddedResource Include="UI\CategoryUi.resx">
       <DependentUpon>CategoryUi.cs</DependentUpon>
@@ -132,11 +133,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UI\SearchAndViewItemSummaryUi.resx">
+      <DependentUpon>SearchAndViewItemSummaryUi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\StockInUi.resx">
       <DependentUpon>StockInUi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\StockOutUi.resx">
       <DependentUpon>StockOutUi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ViewSalesBetweenTwoDatesUi.resx">
+      <DependentUpon>ViewSalesBetweenTwoDatesUi.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\DataSources\StockManagementSystemApp.Models.Category.datasource" />
     <None Include="Properties\DataSources\StockManagementSystemApp.Models.Company.datasource" />
